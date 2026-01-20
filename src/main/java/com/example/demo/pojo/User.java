@@ -3,6 +3,10 @@ package com.example.demo.pojo;
 import com.example.demo.aop.TableName;
 
 /**
+ * 用户实体类
+ * 对应数据库表 sys_user
+ * 包含用户的基本属性和操作方法
+ * 
  * @Author bx25 小陈
  * @Date 2026/1/19 21:28
  */
@@ -11,7 +15,6 @@ import com.example.demo.aop.TableName;
 public class User {
     private String name;
     public User(String name) { this.name = name; }
-    // 省略 getter/setter
 
     public String getName() {
         return name;

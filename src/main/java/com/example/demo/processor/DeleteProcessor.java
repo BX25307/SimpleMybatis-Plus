@@ -1,6 +1,10 @@
 package com.example.demo.processor;
 
 /**
+ * 删除操作处理器
+ * 负责生成并执行删除数据的 SQL 语句
+ * 根据表名和 ID 参数构造 DELETE 语句
+ * 
  * @Author bx25 小陈
  * @Date 2026/1/19 22:13
  */

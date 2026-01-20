@@ -1,6 +1,10 @@
 package com.example.demo.config;
 
 /**
+ * MyBatis-Plus 动态代理调用处理器
+ * 实现动态代理的核心逻辑，负责拦截 Mapper 接口的方法调用
+ * 使用策略模式根据方法名选择对应的 SQL 处理器
+ * 
  * @Author bx25 小陈
  * @Date 2026/1/19 21:26
  */
