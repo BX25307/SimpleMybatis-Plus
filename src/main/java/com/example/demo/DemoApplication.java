@@ -1,5 +1,7 @@
 package com.example.demo;
 
+import com.example.demo.config.MpConfig;
+import com.example.demo.config.SimpleApplicationContext;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 

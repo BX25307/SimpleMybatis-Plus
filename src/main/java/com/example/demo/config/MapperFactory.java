@@ -15,20 +15,14 @@ import org.springframework.context.annotation.Configuration;
 
 import java.lang.reflect.Proxy;
 
-public class MapperFactoryBean<T> implements FactoryBean<T> {
-   private Class<T> mapperInterface;
-   public MapperFactoryBean(Class<T> mapperInterface) {
-      this.mapperInterface = mapperInterface;
-   }
+public class MapperFactory{
 
-   @Override
-   public T getObject() {
+   public static<T> T getProxy(Class<T> mapperInterface) {
       return (T) Proxy.newProxyInstance(
               mapperInterface.getClassLoader(),
               new Class[]{mapperInterface},
               new MpInvocationHandler(mapperInterface) // 绑定 Handler
       );
    }
-   @Override
-   public Class<?> getObjectType() { return mapperInterface; }
+
 }
