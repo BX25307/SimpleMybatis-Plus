@@ -17,7 +17,7 @@ public class InsertProcessor implements SqlProcessor {
         String userName = user.getName();
         // 简单模拟，不解析字段了
         String sql = "INSERT INTO " + tableName + " VALUES (" + userName + ")";
-        System.out.println(">>> [模拟执行] " + sql);
+        System.out.println("模拟执行" + sql);
         return "模拟插入成功：对象 " + args[0].getClass().getSimpleName()+ " 已入库";
     }
 }

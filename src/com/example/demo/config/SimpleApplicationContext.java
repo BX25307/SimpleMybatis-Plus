@@ -33,13 +33,12 @@ public class SimpleApplicationContext {
             for (Field field : bean.getClass().getDeclaredFields()) {
                 if (field.isAnnotationPresent(SimpleAutowired.class)) {
                     field.setAccessible(true);
-
                     // 根据字段类型找 Bean (简化版：通过类型匹配)
                     Object dependency = findBeanByType(field.getType());
 
                     if (dependency != null) {
                         field.set(bean, dependency);
-                        System.out.println(">>> [IOC容器] 注入依赖: " + bean.getClass().getSimpleName() + "." + field.getName());
+                        System.out.println("IOC容器 注入依赖: " + bean.getClass().getSimpleName() + "." + field.getName());
                     }
                 }
             }
@@ -64,7 +63,7 @@ public class SimpleApplicationContext {
                     // 简单起见，类名首字母小写作为 beanName
                     String beanName = lowerFirst(clazz.getSimpleName());
                     beanMap.put(beanName, instance);
-                    System.out.println(">>> [IOC容器] 注册 Controller: " + beanName);
+                    System.out.println("IOC容器 注册 Controller: " + beanName);
                 }
             }
         }
@@ -86,7 +85,7 @@ public class SimpleApplicationContext {
 
                 // 默认用方法名作为 beanName (比如 "userMapper")
                 beanMap.put(method.getName(), beanInstance);
-                System.out.println(">>> [IOC容器] 注册 Bean: " + method.getName());
+                System.out.println("IOC容器 注册 Bean: " + method.getName());
             }
         }
     }

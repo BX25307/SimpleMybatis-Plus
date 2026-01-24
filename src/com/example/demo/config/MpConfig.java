@@ -2,10 +2,7 @@ package com.example.demo.config;
 
 import com.example.demo.aop.SimpleBean;
 import com.example.demo.aop.SimpleConfiguration;
-import com.example.demo.aop.SimpleController;
 import com.example.demo.mapper.UserMapper;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 
 /**
  * MyBatis-Plus 配置类
