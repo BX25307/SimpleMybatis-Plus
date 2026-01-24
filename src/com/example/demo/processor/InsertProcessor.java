@@ -12,7 +12,7 @@ import com.example.demo.pojo.User;
  */
 public class InsertProcessor implements SqlProcessor {
     @Override
-    public String handle(String tableName, Object[] args) {
+    public String doApply(String tableName, Object[] args) {
         User user = (User) args[0];
         String userName = user.getName();
         // 简单模拟，不解析字段了

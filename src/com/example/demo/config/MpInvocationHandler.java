@@ -67,6 +67,6 @@ public class MpInvocationHandler implements InvocationHandler {
         }
 
         // 3. 执行策略
-        return processor.handle(this.tableName, args);
+        return processor.doApply(this.tableName, args);
     }
 }

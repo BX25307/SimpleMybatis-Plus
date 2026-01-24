@@ -1,5 +1,8 @@
 package com.example.demo.handler;
 
+import com.example.demo.aop.SimpleAutowired;
+import com.example.demo.aop.SimpleController;
+import com.example.demo.mapper.UserMapper;
 import com.example.demo.pojo.User;
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
@@ -11,7 +14,10 @@ import java.util.Map;
  * @Author bx25 小陈
  * @Date 2026/1/24 13:07
  */
-public class DeleteUserHandler extends AbstractHandler implements HttpHandler {
+@SimpleController
+public class DeleteUserHandler extends SimpleHandler implements HttpHandler {
+   @SimpleAutowired
+   private UserMapper userMapper;
    @Override
    public void handle(HttpExchange exchange) throws IOException {
       Map<String, String> param = parseQueryParam(exchange.getRequestURI().getQuery());

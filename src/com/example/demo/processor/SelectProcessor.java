@@ -6,7 +6,7 @@ package com.example.demo.processor;
  */
 public class SelectProcessor implements SqlProcessor {
     @Override
-    public String handle(String tableName, Object[] args) {
+    public String doApply(String tableName, Object[] args) {
         String sql = "SELECT * FROM " + tableName + " WHERE id = " + args[0];
         System.out.println("模拟执行" + sql);
         // 模拟返回

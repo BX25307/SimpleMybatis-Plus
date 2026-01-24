@@ -16,14 +16,8 @@ import java.util.Map;
  * @Author bx25 小陈
  * @Date 2026/1/24 13:13
  */
-@SimpleController
-public abstract class AbstractHandler implements HttpHandler {
-    @SimpleAutowired
-    protected UserMapper userMapper;
-    @Override
-    public void handle(HttpExchange exchange) throws IOException {
-        //缺省方法
-    }
+public class SimpleHandler{
+
     protected Map<String,String> parseQueryParam(String query){
         Map<String,String> res=new HashMap<>();
         if(query==null||query.isEmpty()){

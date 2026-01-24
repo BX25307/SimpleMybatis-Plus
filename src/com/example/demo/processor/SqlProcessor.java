@@ -5,5 +5,5 @@ package com.example.demo.processor;
  * @Date 2026/1/19 22:12
  */
 public interface SqlProcessor {
-    String handle(String tableName, Object[] args);
+    String doApply(String tableName, Object[] args);
 }

@@ -14,7 +14,10 @@ import java.util.Map;
  * @Author bx25 小陈
  * @Date 2026/1/24 13:06
  */
-public class AddUserHandler extends AbstractHandler implements HttpHandler {
+@SimpleController
+public class AddUserHandler extends SimpleHandler implements HttpHandler {
+    @SimpleAutowired
+    private UserMapper userMapper;
     @Override
     public void handle(HttpExchange exchange) throws IOException {
         Map<String, String> param = parseQueryParam(exchange.getRequestURI().getQuery());

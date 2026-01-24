@@ -19,7 +19,7 @@ public class SimpleApplicationContext {
             //扫描配置类并注册@SimpleBean
             scanConfig(configClass);
             //扫描配置类同级包下的controller（为了简化，其实可以配置）
-            scanController("com.example.demo.controller");
+            scanController("com.example.demo.handler");
             //执行依赖注入（DI）
             doInjection();
         }catch (Exception e){
