@@ -19,7 +19,7 @@ public class SimpleApplicationContext {
             //扫描配置类并注册@SimpleBean
             scanConfig(configClass);
             //扫描配置类同级包下的controller（为了简化，其实可以配置）
-            scanController("com.example.demo.handler");
+            scanController("com.example.demo");
             //执行依赖注入（DI）
             doInjection();
         }catch (Exception e){
@@ -33,7 +33,7 @@ public class SimpleApplicationContext {
             for (Field field : bean.getClass().getDeclaredFields()) {
                 if (field.isAnnotationPresent(SimpleAutowired.class)) {
                     field.setAccessible(true);
-                    // 根据字段类型找 Bean (简化版：通过类型匹配)
+                    // 根据字段类型找 Bean (通过类型匹配)
                     Object dependency = findBeanByType(field.getType());
 
                     if (dependency != null) {
